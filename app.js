@@ -4,9 +4,14 @@ const tourRouter = require('./routes/tourRouter');
 const userRouter = require('./routes/userRouter');
 
 const app = express();
+
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
+
 app.use(express.json());
 
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
