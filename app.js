@@ -36,6 +36,7 @@ app.use(
         'https://www.gstatic.com',
         'https://cdnjs.cloudflare.com',
         'https://tile.openstreetmap.org',
+        'data:',
       ],
       scriptSrc: [
         "'self'",
