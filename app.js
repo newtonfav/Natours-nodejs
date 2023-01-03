@@ -6,6 +6,7 @@ const rateLimit = require('express-rate-limit');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
+const cookieParser = require('cookie-parser');
 // const csp = require('express-csp');
 
 const tourRouter = require('./routes/tourRouter');
@@ -68,6 +69,7 @@ app.use('/api', limiter);
 
 //Body parser, reading data from body into req.body
 app.use(express.json({ limit: '10kb' }));
+app.use(cookieParser());
 // app.use(morgan('dev'));
 
 //Data sanitization against NoSQL query injection

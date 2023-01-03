@@ -1,9 +1,11 @@
 /* eslint-disable */
 
 const locations = JSON.parse(document.getElementById('map').dataset.location);
-console.log(locations);
 
-var map = L.map('map').setView([51.505, -0.09], 13);
+var map = L.map('map', { zoomControl: false, scrollWheelZoom: false }).setView(
+  [51.505, -0.09],
+  13
+);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution:
@@ -30,4 +32,4 @@ locations.forEach((loc) => {
   coords.push(temp);
 });
 
-map.flyToBounds(coords, { padding: [100, 100] });
+map.flyToBounds(coords, { padding: [150, 150] });
