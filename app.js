@@ -102,6 +102,7 @@ csp.extend(app, {
         'https://*.stripe.com',
         'https://*.mapbox.com',
         'https://*.cloudflare.com/',
+        'https://tile.openstreetmap.org',
         'https://bundle.js:*',
         'ws://localhost:*/',
       ],

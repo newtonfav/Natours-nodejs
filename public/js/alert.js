@@ -1,0 +1,17 @@
+/* eslint-disable */
+
+export const hideAlert = () => {
+  const el = document.querySelector('.alert');
+  if (el) el.parentElement.removeChild(el);
+};
+
+//type can either be 'success' or 'error'
+export const showAlert = (type, msg) => {
+  hideAlert();
+  console.log('newton');
+
+  const markup = `<div class="alert alert--${type}">${msg}<div>`;
+  document.querySelector('body').insertAdjacentHTML('afterbegin', markup);
+
+  window.setTimeout(hideAlert, 5000);
+};
