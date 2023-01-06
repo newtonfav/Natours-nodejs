@@ -11980,7 +11980,6 @@ var hideAlert = function hideAlert() {
 exports.hideAlert = hideAlert;
 var showAlert = function showAlert(type, msg) {
   hideAlert();
-  console.log('newton');
   var markup = "<div class=\"alert alert--".concat(type, "\">").concat(msg, "<div>");
   document.querySelector('body').insertAdjacentHTML('afterbegin', markup);
   window.setTimeout(hideAlert, 5000);
@@ -12022,7 +12021,7 @@ var login = /*#__PURE__*/function () {
             (0, _alert.showAlert)('success', 'Logged in successfully!');
             window.setTimeout(function () {
               location.assign('/');
-            }, 1500);
+            }, 500);
           }
           _context.next = 10;
           break;
@@ -12212,7 +12211,7 @@ var _mapbox = require("./mapbox");
 var _login = require("./login");
 //DOM ELEMENTS
 var mapbox = document.getElementById('map');
-var loginForm = document.querySelector('.form');
+var loginForm = document.querySelector('.form--login');
 var logoutBtn = document.querySelector('.nav__el--logout');
 
 //DELEGATION
@@ -12254,7 +12253,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57364" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64595" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

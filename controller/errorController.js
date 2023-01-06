@@ -35,6 +35,8 @@ const sendErrorDev = (err, req, res) => {
     });
   } else {
     //RENDERED WEBSITE
+    console.error('Error⚠️', err);
+
     res.status(err.statusCode).render('error', {
       title: 'Something went wrong!',
       msg: err.message,
@@ -74,7 +76,7 @@ const sendErrorProd = (err, req, res) => {
 
   return res.status(err.statusCode).render('error', {
     title: 'Something went wrong!',
-    msg: 'Please, Try again, later!',
+    msg: 'Try again, later!',
   });
 };
 
@@ -86,7 +88,8 @@ module.exports = (err, req, res, next) => {
     sendErrorDev(err, req, res);
   } else if (process.env.NODE_ENV === 'production') {
     // eslint-disable-next-line node/no-unsupported-features/es-syntax
-    let error;
+    let error = { ...err };
+    error.message = err.message;
 
     if (err.name === 'CastError') error = handleCastErrorDB(err);
     if (err.code === 11000) error = handleDuplicateFieldsDB(err);

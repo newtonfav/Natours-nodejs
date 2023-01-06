@@ -8,7 +8,6 @@ export const hideAlert = () => {
 //type can either be 'success' or 'error'
 export const showAlert = (type, msg) => {
   hideAlert();
-  console.log('newton');
 
   const markup = `<div class="alert alert--${type}">${msg}<div>`;
   document.querySelector('body').insertAdjacentHTML('afterbegin', markup);
