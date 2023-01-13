@@ -12,6 +12,7 @@ const csp = require('express-csp');
 const tourRouter = require('./routes/tourRouter');
 const userRouter = require('./routes/userRouter');
 const reviewRouter = require('./routes/reviewRouter');
+const bookingRouter = require('./routes/bookingRouter');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controller/errorController');
 const viewRouter = require('./routes/viewRouter');
@@ -167,6 +168,7 @@ app.use('/', viewRouter);
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/review', reviewRouter);
+app.use('/api/v1/booking', bookingRouter);
 
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 500));
