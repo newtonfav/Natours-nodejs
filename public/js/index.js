@@ -15,7 +15,6 @@ const logoutBtn = document.querySelector('.nav__el--logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
 const bookbtn = document.getElementById('book-tour');
-// console.log(bookbtn);
 
 //DELEGATION
 if (mapbox) {
@@ -56,7 +55,6 @@ if (userDataForm) {
     form.append('name', document.getElementById('name').value);
     form.append('email', document.getElementById('email').value);
     form.append('photo', document.getElementById('photo').files[0]);
-    console.log(form);
 
     // const name = document.getElementById('name').value;
     // const email = document.getElementById('email').value;

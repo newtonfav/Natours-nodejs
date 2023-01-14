@@ -12149,25 +12149,22 @@ var bookTour = /*#__PURE__*/function () {
           return (0, _axios.default)("http://localhost:3000/api/v1/booking/checkout-session/".concat(tourId));
         case 4:
           session = _context.sent;
-          console.log(session);
-          //2. Create checkout form + charge credit card
-          _context.next = 8;
+          _context.next = 7;
           return stripe.redirectToCheckout({
             sessionId: session.data.session.id
           });
-        case 8:
-          _context.next = 14;
+        case 7:
+          _context.next = 12;
           break;
-        case 10:
-          _context.prev = 10;
+        case 9:
+          _context.prev = 9;
           _context.t0 = _context["catch"](1);
-          console.log(_context.t0);
           (0, _alert.showAlert)('error', _context.t0);
-        case 14:
+        case 12:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[1, 10]]);
+    }, _callee, null, [[1, 9]]);
   }));
   return function bookTour(_x) {
     return _ref.apply(this, arguments);
@@ -12214,14 +12211,13 @@ var signup = /*#__PURE__*/function () {
               location.assign('/');
             }, 500);
           }
-          _context.next = 11;
+          _context.next = 10;
           break;
         case 7:
           _context.prev = 7;
           _context.t0 = _context["catch"](0);
-          console.log(_context.t0);
           (0, _alert.showAlert)('error', _context.t0.response.data.message);
-        case 11:
+        case 10:
         case "end":
           return _context.stop();
       }
@@ -81285,7 +81281,6 @@ var logoutBtn = document.querySelector('.nav__el--logout');
 var userDataForm = document.querySelector('.form-user-data');
 var userPasswordForm = document.querySelector('.form-user-password');
 var bookbtn = document.getElementById('book-tour');
-// console.log(bookbtn);
 
 //DELEGATION
 if (mapbox) {
@@ -81318,7 +81313,6 @@ if (userDataForm) {
     form.append('name', document.getElementById('name').value);
     form.append('email', document.getElementById('email').value);
     form.append('photo', document.getElementById('photo').files[0]);
-    console.log(form);
 
     // const name = document.getElementById('name').value;
     // const email = document.getElementById('email').value;

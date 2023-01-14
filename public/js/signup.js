@@ -23,7 +23,6 @@ export const signup = async (name, email, password, passwordConfirm) => {
       }, 500);
     }
   } catch (err) {
-    console.log(err);
     showAlert('error', err.response.data.message);
   }
 };

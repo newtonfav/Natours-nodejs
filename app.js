@@ -8,6 +8,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const csp = require('express-csp');
+const compression = require('compression');
 
 const tourRouter = require('./routes/tourRouter');
 const userRouter = require('./routes/userRouter');
@@ -163,6 +164,8 @@ app.use(
     ],
   })
 );
+
+app.use(compression());
 
 //ROUTES
 app.use('/', viewRouter);
