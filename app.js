@@ -42,6 +42,7 @@ app.use(
       ],
       scriptSrc: [
         "'self'",
+        'unsafe-eval',
         'https://*.stripe.com',
         'https://cdnjs.cloudflare.com',
         'https://api.mapbox.com',
@@ -60,7 +61,7 @@ csp.extend(app, {
   policy: {
     directives: {
       'default-src': ['self'],
-      'style-src': ['self', 'unsafe-inline', 'https:'],
+      'style-src': ['self', 'unsafe-eval', 'unsafe-inline', 'https:'],
       'font-src': ['self', 'https://fonts.gstatic.com'],
       'script-src': [
         'self',
