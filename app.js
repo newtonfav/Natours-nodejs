@@ -61,11 +61,12 @@ csp.extend(app, {
   policy: {
     directives: {
       'default-src': ['self'],
-      'style-src': ['self', 'unsafe-eval', 'unsafe-inline', 'https:'],
+      'style-src': ['self', 'unsafe-inline', 'https:'],
       'font-src': ['self', 'https://fonts.gstatic.com'],
       'script-src': [
         'self',
         'unsafe-inline',
+        'unsafe-eval',
         'data',
         'blob',
         'https://js.stripe.com',
